@@ -27,6 +27,7 @@ export default function createWorld(container: HTMLDivElement) {
   const init = async () => {
     const { parrot, flamingo, stork } = await loadBirds();
     controls.target.copy(parrot.position);
+    loop.updatables.push(parrot, flamingo, stork);
     scene.add(parrot, flamingo, stork);
   };
 
